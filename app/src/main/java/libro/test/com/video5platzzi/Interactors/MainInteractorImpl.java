@@ -1,4 +1,4 @@
-package libro.test.com.video5platzzi.Interactors;
+package libro.test.com.video5platzzi.interactors;
 
 import android.util.Base64;
 import android.util.Log;
@@ -10,8 +10,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import libro.test.com.video5platzzi.Interfaces.MainInteractor;
-import libro.test.com.video5platzzi.Interfaces.OnLoadFinishListener;
+import libro.test.com.video5platzzi.interfaces.MainInteractor;
+import libro.test.com.video5platzzi.interfaces.OnLoadFinishListener;
 import libro.test.com.video5platzzi.api.rest.TweeterRestApi;
 import libro.test.com.video5platzzi.model.Tweet;
 import libro.test.com.video5platzzi.model.api.rest.Authenticate;
@@ -29,7 +29,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainInteractorImpl implements MainInteractor {
 
-
+    /**
+     * Carga los tweets y decide que hacer segun el listener
+     * @param finishListener OnLoadFinishListener
+     */
     @Override
     public void loadTweets(final OnLoadFinishListener finishListener) {
         Retrofit retrofit = new Retrofit.Builder()
@@ -41,7 +44,7 @@ public class MainInteractorImpl implements MainInteractor {
 
         String combined = Utils.API_KEY + ":" + Utils.API_SECRET;
 
-        service.getAuthotizationToken("Basic " + Base64.encodeToString(combined.getBytes(), Base64.NO_WRAP), "client_credentials").enqueue(new Callback<Authenticate>() {
+        service.getAuthorizationToken("Basic " + Base64.encodeToString(combined.getBytes(), Base64.NO_WRAP), "client_credentials").enqueue(new Callback<Authenticate>() {
             @Override
             public void onResponse(Call<Authenticate> call, Response<Authenticate> response) {
 

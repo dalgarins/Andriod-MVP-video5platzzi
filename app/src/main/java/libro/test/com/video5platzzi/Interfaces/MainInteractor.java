@@ -1,4 +1,4 @@
-package libro.test.com.video5platzzi.Interfaces;
+package libro.test.com.video5platzzi.interfaces;
 
 /**
  * Created by NoaD on 14/11/2016.

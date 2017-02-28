@@ -1,4 +1,4 @@
-package libro.test.com.video5platzzi.Views;
+package libro.test.com.video5platzzi.views;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -10,15 +10,15 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 
-import libro.test.com.video5platzzi.Interfaces.MainPresenter;
-import libro.test.com.video5platzzi.Interfaces.MainView;
-import libro.test.com.video5platzzi.Presenters.MainPresenterImpl;
+import libro.test.com.video5platzzi.interfaces.MainPresenter;
+import libro.test.com.video5platzzi.interfaces.MainView;
+import libro.test.com.video5platzzi.presenters.MainPresenterImpl;
 import libro.test.com.video5platzzi.R;
 import libro.test.com.video5platzzi.adapters.TweetAdapter;
 import libro.test.com.video5platzzi.databinding.ActivityMainBinding;
 import libro.test.com.video5platzzi.model.Tweet;
 
-public class MainActivity extends AppCompatActivity implements MainView{
+public class MainActivity extends AppCompatActivity implements MainView {
 
     private ActivityMainBinding binding;
     private MainPresenter presenter;
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         setSupportActionBar(binding.toolbar);
+
         presenter = new MainPresenterImpl(this);
 
         tweetAdapter = new TweetAdapter(this, new ArrayList<Tweet>());
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
         binding.setMainView(this);
 
-        presenter.loadTweets();
+        loadTweets();
     }
 
     @Override

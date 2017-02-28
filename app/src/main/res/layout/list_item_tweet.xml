@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable name="tweet" type="libro.test.com.video5platzzi.model.Tweet"/>
     </data>
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher"
             android:layout_centerVertical="true"
             android:gravity="left"
-            android:id="@+id/imageView"
             android:maxHeight="70dp"
             android:maxWidth="70dp"
             android:minHeight="70dp"
             android:minWidth="70dp"
-            app:imageUrl="@{tweet.profileImageUrl}"/>
+            app:imageUrl="@{tweet.profileImageUrl}" />
 
         <TextView
             android:text="@{tweet.name}"

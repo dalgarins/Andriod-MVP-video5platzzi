@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "libro.test.com.video5platzzi"
         minSdkVersion 16
@@ -19,6 +19,10 @@ android {
     }
     dataBinding {
         enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
     }
 }
 

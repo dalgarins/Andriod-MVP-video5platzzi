@@ -6,7 +6,7 @@ package libro.test.com.video5platzzi.utils;
 
 public class Utils {
 
-    public static final String API_KEY = "";
-    public static final String API_SECRET = "";
+    public static final String API_KEY = "QbsG7qyFq28BuHoFIFHJQNP9m";
+    public static final String API_SECRET = "l5BPppgqENX1CjUXx95U831mqjbDaJFYSGlpX70Gpu7TXwe64r";
 
 }

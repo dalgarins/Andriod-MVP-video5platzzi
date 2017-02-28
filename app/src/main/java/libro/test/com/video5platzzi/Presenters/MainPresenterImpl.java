@@ -1,16 +1,16 @@
-package libro.test.com.video5platzzi.Presenters;
+package libro.test.com.video5platzzi.presenters;
 
 import java.util.ArrayList;
 
-import libro.test.com.video5platzzi.Interactors.MainInteractorImpl;
-import libro.test.com.video5platzzi.Interfaces.MainInteractor;
-import libro.test.com.video5platzzi.Interfaces.MainPresenter;
-import libro.test.com.video5platzzi.Interfaces.MainView;
-import libro.test.com.video5platzzi.Interfaces.OnLoadFinishListener;
+import libro.test.com.video5platzzi.interactors.MainInteractorImpl;
+import libro.test.com.video5platzzi.interfaces.MainInteractor;
+import libro.test.com.video5platzzi.interfaces.MainPresenter;
+import libro.test.com.video5platzzi.interfaces.MainView;
+import libro.test.com.video5platzzi.interfaces.OnLoadFinishListener;
 import libro.test.com.video5platzzi.model.Tweet;
 
 /**
- * Created by NoaD on 14/11/2016.
+ * Presentador del main activity
  */
 
 public class MainPresenterImpl implements MainPresenter, OnLoadFinishListener {

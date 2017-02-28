@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <import type="android.view.View"/>
-        <variable name="mainView" type="libro.test.com.video5platzzi.Interfaces.MainView" />
+        <variable name="mainView" type="libro.test.com.video5platzzi.interfaces.MainView" />
     </data>
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="libro.test.com.video5platzzi.Views.MainActivity">
+        tools:context="libro.test.com.video5platzzi.views.MainActivity">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
