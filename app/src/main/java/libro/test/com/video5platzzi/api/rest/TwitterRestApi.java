@@ -15,7 +15,7 @@ import retrofit2.http.Query;
  * Created by NoaD on 14/11/2016.
  */
 
-public interface TweeterRestApi {
+public interface TwitterRestApi {
 
     @POST("oauth2/token")
     @FormUrlEncoded

@@ -18,9 +18,9 @@ public class MainPresenterImpl implements MainPresenter, OnLoadFinishListener {
     private MainView view;
     private MainInteractor interactor;
 
-    public MainPresenterImpl(MainView view){
+    public MainPresenterImpl(MainView view, MainInteractor mainInteractor){
         this.view = view;
-        this.interactor = new MainInteractorImpl();
+        this.interactor = mainInteractor;
     }
 
     @Override

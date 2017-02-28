@@ -10,9 +10,12 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.inject.Inject;
+import javax.inject.Provider;
+
 import libro.test.com.video5platzzi.interfaces.MainInteractor;
 import libro.test.com.video5platzzi.interfaces.OnLoadFinishListener;
-import libro.test.com.video5platzzi.api.rest.TweeterRestApi;
+import libro.test.com.video5platzzi.api.rest.TwitterRestApi;
 import libro.test.com.video5platzzi.model.Tweet;
 import libro.test.com.video5platzzi.model.api.rest.Authenticate;
 import libro.test.com.video5platzzi.utils.Utils;
@@ -29,18 +32,18 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainInteractorImpl implements MainInteractor {
 
+    private TwitterRestApi service;
+
+    @Inject public MainInteractorImpl(TwitterRestApi service){
+        this.service = service;
+    }
+
     /**
      * Carga los tweets y decide que hacer segun el listener
      * @param finishListener OnLoadFinishListener
      */
     @Override
     public void loadTweets(final OnLoadFinishListener finishListener) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.twitter.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        final TweeterRestApi service = retrofit.create(TweeterRestApi.class);
 
         String combined = Utils.API_KEY + ":" + Utils.API_SECRET;
 
